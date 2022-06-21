@@ -41,7 +41,7 @@ all_data = {
     'SOC': [75]
 }
 
-## Datos de entrada
+## Datos de entrada necesarios
 
 Los datos que se necesitan proporcionar para que sea posible llevar a cabo la optimización  de la batería son los siguientes.
 
@@ -66,10 +66,24 @@ Los datos que se necesitan proporcionar para que sea posible llevar a cabo la op
 Hay que tener en cuenta que para que el la función de optimización funcione correctamente, los datos tienen que tener la misma granularidad (o menor) que el valor de la granularidad de los precios, es decir, si el precio se da cada hora, como mínimo los datos de consumo deben proporcionarse cada hora. En caso de que esto no sea posible, los datos deberán ser interpolados, lo cual hará que se pierda precisión en la optimización.
 
 
+## Estructura de datos de salida
 
+Para la optimización:
 
+       {       
+        "riesgo":1.1007499893768526,
+        "coste":-331.6737653122391,
+        "no_battery":32505.19823468775,
+        "no_software":26925.918234687728,
+        "reduction": 101.23180113087085,
+        "operaciones": [37,-35,25,19,...
+        "estado": [30,67,32,57,76,66,...
+        }
 
+Para el estado de salud:
 
-
-
-
+      {
+      "SOH_today": [99.34, 99.12 ,99.99 ,99.67 ,99.12],
+      "SOH_his": [99.11, 99.07, 98.44, 98.92, 98.10,...
+      }
+    
